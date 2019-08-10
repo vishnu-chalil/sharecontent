@@ -144,5 +144,5 @@ ANALYTICAL_INTERNAL_IPS = ["192.168.1.45", "192.168.1.57"]
 
 MEDIA_URL = "/media/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "vishnuchalil/media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "vishnuchalil/content")
 
