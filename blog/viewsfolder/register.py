@@ -44,9 +44,6 @@ class RegisterView(CreateView):
             uid = urlsafe_base64_encode(force_bytes(u.pk))
             token = default_token_generator.make_token(u)
             kwargs = {"uidb64": uid, "token": token}
-            print(len(uid), ":uid")
-            print(len(str(uid)), "string uid")
-            uid = str(uid)[2:-1]
             # hardcodedurl
             activation_link = (
                 str(current_site)
