@@ -1,0 +1,79 @@
+/* sign in FORM */
+
+
+.social-login {
+    width: 390px;
+    margin: 0 auto;
+    margin-bottom: 14px;
+}
+
+.social-btn {
+    font-weight: 100;
+    color: white;
+    width: 190px;
+    font-size: 1.5rem;
+}
+
+.lines {
+    width: 200px;
+    border: 1px solid red;
+}
+
+facebook-btn {
+    background-color: #3C589C;
+}
+
+.google-btn {
+    background-color: #DF4B3B;
+}
+
+
+.social-btn {
+    width: 210px;
+}
+
+
+.social-login {
+    width: 210px !important;
+    margin: 0 auto;
+}
+
+/* Mobile */
+
+@media screen and (max-width:500px) {
+    #logreg-forms {
+        width: 300px;
+    }
+
+    .social-login {
+        width: 200px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .social-btn {
+        font-size: 1.3rem;
+        font-weight: 100;
+        color: white;
+        width: 50px;
+        height: 56px;
+
+    }
+
+    .social-btn:nth-child(1) {
+        margin-bottom: 5px;
+    }
+
+    .social-btn span {
+        display: none;
+    }
+
+    .facebook-btn:after {
+        content: 'Facebook';
+    }
+
+    .google-btn:after {
+        content: 'Google+';
+    }
+
+}

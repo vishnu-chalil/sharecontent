@@ -1,0 +1,127 @@
+<!-- this is base template with navbar and footer -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>sharedcontent</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"
+        media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/button.css' %}" />
+
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'blog:home' %}">sharedcontent</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+                <!-- show registration only if user is not yet authenticated -->
+                {% if not user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="{% url 'register' %}">SIGN UP</a></li>
+                </ul>
+                {% endif %}
+                <!-- show login only if user is not yet authenticated -->
+                {% if not user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="{% url 'login' %}">LOGIN</a></li>
+                </ul>
+                {% endif %}
+                <!-- show My Blog only if user is authenticated -->
+
+                {% if user.is_authenticated %}
+                <div class="col-sm-4 col-md-5 pull-left">
+                    <form class="navbar-form" role="search" method="GET" action="{% url 'blog:search' %}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="srch-term"
+                                id="srch-term">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i
+                                        class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="{% url 'blog:user_posts' user.username %}">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        </a></li>
+                </ul>
+                {% endif %}
+                <!-- show new post only if user is authenticated -->
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="{% url 'blog:create_post' %}">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a></li>
+                </ul>
+                {% endif %}
+                <!-- show My Blog only if user is authenticated -->
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="{% url 'blog:change_password' %}">CHANGE PASSWORD</a></li>
+                </ul>
+                {% endif %}
+                <!-- show sign out only if user is authenticated -->
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav ">
+                    <li class="active"> <a href="{% url 'logout' %}">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+
+                        </a>
+
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div id="content" style="background: black important !">
+        {% block content %}{% endblock %}
+    </div>
+
+    <hr>
+
+    <!-- footer -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- Logged user info -->
+                {% if user.is_authenticated %}
+                <p class="text-center">
+                    | Logged user: {{ user.username }}
+                    | Email: {{ user.email }}
+                    |
+                    <a href="{% url 'logout' %}">Sign Out</a>
+                </p>
+                {% endif %}
+
+                <div>
+                    <p class="text-center">2019 sharedcontent</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+    </div>
+
+</body>
+
+</html>

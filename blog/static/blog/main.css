@@ -1,0 +1,49 @@
+h1 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+footer {
+    margin-top: 60px;
+}
+
+.validation-message {
+    font-style: normal;
+    font-size: 10px;
+    color: black;
+}
+
+a {
+    transition: all .2s;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: purple;
+    text-decoration: none;
+}
+
+.pagination {
+    display: block;
+    text-align: center;
+}
+
+.content {
+    text-align: justify;
+    text-justify: inter-word;
+    white-space: pre-wrap;
+
+}
+
+.postbody {
+    white-space: pre-wrap;
+}
+
+.welcomecontent {
+    color: aliceblue;
+
+}

@@ -1,0 +1,96 @@
+{% extends "blog/base.html" %} {% block content %}
+<div class="container">
+  <!-- Post -->
+  <div class="jumbotron">
+    <!-- <div class="embed-responsive embed-responsive-16by9">
+            {% load static %}
+            <iframe class="embed-responsive-item" src="post"></iframe>
+        </div>
+        -->
+    <!-- Post title -->
+    <div class="panel panel-default" style="background:white; color:black important;">
+      <div class="container">
+        <h2>{{ post.title }}</h2>
+
+        <div>
+          Created {{ post.pub_date }} by
+          <a href="{% url 'blog:user_posts' post.user.username %}">
+            {{ post.user.username }}</a>
+        </div>
+      </div>
+    </div>
+    <!-- image link -->
+    {% if post.link|length > 6  %}
+    {% if 'embed' in post.link %}
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src={{ post.link }}></iframe>
+    </div>
+    {% else%}
+    <div class="panel panel-default" style="background:white">
+      <div class="container">
+        <img src={{ post.link }} height="600" width="1000  ">
+      </div>
+    </div>
+    {% endif %}
+
+    {% elif post.imgdata.url is not None%}
+    <div class="panel panel-default" style="background:white">
+      <div class="container">
+        <img src={{ post.imgdata.url }} height="600" width="1000  ">
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Post body -->
+    <div id="content" class="panel panel-default" style="background:white   " align="justify"
+      style="text-align: justify !important;" "
+    >
+      <div id=" postbody" class="container" style=>
+      <h4>{{ post.body }}</h4>
+    </div>
+  </div>
+
+  <!-- Show Update and Delete button only if User is the owner of the Post -->
+  {% if post.user == user %}
+  <div class="row">
+    <!-- Delete button -->
+    <a href="{% url 'blog:delete_post' post.pk %}" class="col-md-2 pull-right">
+      <button type="button" class="btn btn-danger btn-block">Delete</button>
+    </a>
+
+    <!-- Update button -->
+    <a href="{% url 'blog:update_post' post.pk %}" class="col-md-2 pull-right">
+      <button type="button" class="btn btn-primary btn-block">Update</button>
+    </a>
+  </div>
+  {% endif %}
+  <!-- 16:9 aspect ratio -->
+</div>
+
+<h2>Comments:</h2>
+
+<!-- Comments -->
+{% for comment in comments %}
+<div class="well">
+  <div>
+    Created {{ comment.pub_date }} by
+    <a href="{% url 'blog:user_posts' comment.user.username %}">
+      {{ comment.user.username }}</a>
+  </div>
+
+  <!-- Comment body -->
+  <h3>{{ comment.body }}</h3>
+</div>
+{% endfor %}
+
+<!-- Show Comment button only if User is authenticated -->
+{% if user.is_authenticated %}
+
+<!-- Comment button -->
+<a href="{% url 'blog:create_comment' post.pk %}" class="col-md-2 pull-right">
+  <button type="button" class="btn btn-primary btn-block">Comment</button>
+</a>
+
+{% endif %}
+</div>
+{% endblock content %}
