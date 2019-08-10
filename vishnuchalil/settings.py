@@ -141,9 +141,9 @@ LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "/blog/"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = (
-    "272636767783-33vkf88c41ht5o55uun6k8oodpgqfeml.apps.googleusercontent.com"
+    "272636767783-q29bdl4102rb7pooo8tiue5eg99255vj.apps.googleusercontent.com"
 )  # CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "euHqqp0k1OtCNkkfBDagz8uq"  # Secret Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "W-2P7aImVjr_p597oxLqDeVm"  # Secret Key
 
 
 AUTH_USER_EMAIL_UNIQUE = True
