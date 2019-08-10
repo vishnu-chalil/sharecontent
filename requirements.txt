@@ -5,3 +5,4 @@ social-auth-core==3.2.0
 dj-database-url
 python-dotenv
 psycopg2
+Pillow
