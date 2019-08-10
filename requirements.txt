@@ -1,5 +1,5 @@
 django
-django-analatyical
+analatyical
 social_django
 postgresql
 psycopg2
