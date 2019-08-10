@@ -1,4 +1,4 @@
 django
 social-auth-app-django
-postgresql
+python-pip python-dev libpq-dev postgresql postgresql-contrib
 psycopg2
