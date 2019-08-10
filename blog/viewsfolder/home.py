@@ -15,9 +15,9 @@ def home(request, username=None):
         user = User.objects.get(username=username)
         first_name = user.first_name
         last_name = user.last_name
-        post_list = QueryTable(Post.objects.filter(user=user))
+        post_list = Post.objects.filter(user=user)
     else:
-        post_list = QueryTablePost.objects.all())
+        post_list = Post.objects.all()
 
     post_list = post_list.order_by("-pub_date")
     paginator = Paginator(post_list, NUM_OF_POSTS)  # Show NUM_OF_PAGES posts per page
