@@ -46,7 +46,7 @@ def search_result(request, search_item=None):
             # page = request.GET.get("page")
             print(post_list)
             # posts = paginator.get_page(1)
-            first_name = "Search results"
+            first_name = "Results"
             last_name = ""
             return render(
                 request,
