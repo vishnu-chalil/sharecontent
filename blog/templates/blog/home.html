@@ -4,7 +4,7 @@
 <div class="container">
 
     <!-- Show this section only for User Blog view -->
-    {% (if first_name or last_name) and first_name is not "Results" %}
+    {%  if ( first_name or last_name) and first_name is not "Results" %}
     <div class="jumbotron" style="background:#BCC6CC" " align=" justify" style="text-align: justify !important;">
         <h2>Hi {{ first_name }}. Welcome back!. Write some quality content for the people.Express your views and
             expereince.But remember you are the only person responsible for the contents you create. The admin is
