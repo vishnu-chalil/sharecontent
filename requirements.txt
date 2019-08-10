@@ -4,3 +4,4 @@ social-auth-app-django==3.1.0
 social-auth-core==3.2.0
 dj-database-url
 python-dotenv
+psycopg2
