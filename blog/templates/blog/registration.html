@@ -1,12 +1,12 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container center_div">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
             <!-- Form - User -->
-            <form action="" method="post" class="form-horizontal">
+            <form action="" method="post" class="form-horizontal justify-content-center">
 
                 {% csrf_token %}
 
@@ -95,16 +95,17 @@
                 </div>
 
                 <p class="text-center"><strong>OR</strong></p>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <a href="{% url 'social:begin' 'google-oauth2' %}">
-                            <input type="submit" class="btn  btn-block google-btn social-btn" value=" Sign
-                            in with Google" />
-                        </a>
-                    </div>
-                </div>
+
 
             </form>
+            <div class="row">
+                <div class="col-sm-9">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}">
+                        <input type="submit" class="btn  btn-block google-btn social-btn" value=" Sign
+                            in with Google" />
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>

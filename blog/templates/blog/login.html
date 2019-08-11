@@ -60,16 +60,17 @@
                 <input type="hidden" name="next" value="{% url 'blog:home' %}" />
                 <br>
                 <p class="text-center"><strong>OR</strong></p>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <a href="{% url 'social:begin' 'google-oauth2' %}">
-                            <input type="submit" class="btn  btn-block google-btn social-btn" value=" Sign
-                            in with Google" />
-                        </a>
-                    </div>
-                </div>
 
             </form>
+            <div class="row">
+                <div class="col-sm-9">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}">
+                        <input type="submit" class="btn  btn-block google-btn social-btn" value=" Sign
+                            in with Google" />
+                    </a>
+                </div>
+            </div>
+
             <!--<p><strong>-- OR --</strong></p>
             <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
             
