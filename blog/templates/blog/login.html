@@ -58,23 +58,27 @@
                 <!-- Form field - next -->
                 <!-- Used to configure redirect after successful login -->
                 <input type="hidden" name="next" value="{% url 'blog:home' %}" />
+                <br>
+                <p class="text-center"><strong>OR</strong></p>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="{% url 'social:begin' 'google-oauth2' %}">
+                            <input type="submit" class="btn  btn-block google-btn social-btn" value=" Sign
+                            in with Google" />
+                        </a>
+                    </div>
+                </div>
 
             </form>
-            <br>
-            <p><strong>-- OR --</strong></p>
-            <a href="{% url 'social:begin' 'google-oauth2' %}">
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign
-                        in with Google</span> </button>
-
-            </a><br>
-
             <!--<p><strong>-- OR --</strong></p>
             <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
             
             -->
 
         </div>
-    </div>
+    </div><br>
 
+    <br>
 </div>
+
 {% endblock %}

@@ -28,7 +28,7 @@
     {% else%}
     <div class="panel panel-default" style="background:white">
       <div class="container">
-        <img src={{ post.link }} height="600" width="800  ">
+        <img src={{ post.link }} class="img-responsive" height="600" width="800  ">
       </div>
     </div>
     {% endif %}
@@ -36,7 +36,7 @@
     {% elif post.imgdata.url is not None%}
     <div class="panel panel-default" style="background:white">
       <div class="container">
-        <img src={{ post.imgdata.url }} height="600" width="989">
+        <img src={{ post.imgdata.url }} class="img-responsive" height="600" width="989">
       </div>
     </div>
     {% endif %}
