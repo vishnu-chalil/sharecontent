@@ -2,6 +2,7 @@ import os
 import dj_database_url
 import dotenv
 
+# import django.core.mail.backends.smtp.EmailBackend
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -123,8 +124,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "vishnuchalil877@gmail.com"
 EMAIL_HOST_PASSWORD = "M@d080797"
-EMAIL_PORT = 587
-
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "/blog/"
