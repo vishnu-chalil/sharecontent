@@ -8,8 +8,8 @@ User._meta.get_field("email")._unique = True
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=80, unique=True)
-    link = models.CharField(max_length=200, blank=True, default=None)
+    title = models.CharField(max_length=300, unique=True)
+    link = models.CharField(max_length=500, blank=True, default=None)
     imgdata = models.ImageField(upload_to="media", blank=True)
     body = models.TextField()
     pub_date = models.DateTimeField("date published", auto_now_add=True)
